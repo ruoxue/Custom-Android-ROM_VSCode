@@ -1,0 +1,6 @@
+C:\Users\84991\Desktop\AndroidEnv
+C:\Android-SDK\emulator\emulator.exe
+3
+C:\Android-SDK\emulator\emulator.exe
+-avd
+MyTestEnv

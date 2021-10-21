@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "虚拟机启动",
+            "type": "process",
+            //此处安装目录记得修改为自己的安卓SDK安装目录
+            "command": "C:\\Android-SDK\\emulator\\emulator.exe",
+            "args": [
+                "-avd",
+                "MyTestEnv"
+            ]
+        },
+        //Log输出的tee命令需要单独安装
+        {
+            "label": "输出Log(专属)",
+            "type": "shell",
+            "command": "adb",
+            "args": [
+                "logcat",
+                "-v",
+                "time",
+                "|",
+                "find",
+                "I",
+                "|",
+                "tee",
+                "AOSP.log"
+            ]
+        },
+        {
+            "label": "输出Log(全部)",
+            "type": "shell",
+            "command": "adb",
+            "args": [
+                "logcat",
+                "-v",
+                "time",
+                "|",
+                "tee",
+                "AOSP.log"
+            ]
+        }
+    ]
+}

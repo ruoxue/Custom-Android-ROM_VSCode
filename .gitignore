@@ -1,0 +1,6 @@
+/imgs
+*.img
+*.qcow2
+*.cache
+**/tmpAdbCmds
+**/kernel-ranchu-64
