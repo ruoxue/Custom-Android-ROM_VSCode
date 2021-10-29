@@ -6,42 +6,28 @@
         {
             "label": "虚拟机启动",
             "type": "process",
-            //此处安装目录记得修改为自己的安卓SDK安装目录
             "command": "C:\\Android-SDK\\emulator\\emulator.exe",
             "args": [
                 "-avd",
                 "MyTestEnv"
-            ]
-        },
-        //Log输出的tee命令需要单独安装
-        {
-            "label": "输出Log(专属)",
-            "type": "shell",
-            "command": "adb",
-            "args": [
-                "logcat",
-                "-v",
-                "time",
-                "|",
-                "find",
-                "I",
-                "|",
-                "tee",
-                "AOSP.log"
-            ]
+            ],
+            "dependsOn": [
+                "DDMS启动"
+            ],
+            "problemMatcher": []
         },
         {
-            "label": "输出Log(全部)",
-            "type": "shell",
-            "command": "adb",
-            "args": [
-                "logcat",
-                "-v",
-                "time",
-                "|",
-                "tee",
-                "AOSP.log"
-            ]
+            "label": "DDMS启动",
+            "type": "process",
+            "command": "C:\\Android-SDK\\tools\\monitor.bat",
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            }
         }
     ]
 }

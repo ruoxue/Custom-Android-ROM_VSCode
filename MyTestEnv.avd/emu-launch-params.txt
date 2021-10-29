@@ -1,6 +1,10 @@
-C:\Users\84991\Desktop\AndroidEnv
+C:\Program Files\Android\Android Studio\jre\bin
 C:\Android-SDK\emulator\emulator.exe
-3
+7
 C:\Android-SDK\emulator\emulator.exe
+-netdelay
+none
+-netspeed
+full
 -avd
 MyTestEnv
